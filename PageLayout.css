@@ -1,0 +1,176 @@
+* {
+    box-sizing: border-box;
+    }
+  
+  .section {
+    display: flex;
+  }
+  
+  .header {
+  text-align: center;
+  }
+  
+  .navbar {
+  width: 100%;
+  }
+  
+  .search-container {
+    float: left;
+    margin: 50px;
+  }
+  
+  .search-container input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: 1px solid #bbb;
+  }
+  
+  .search-container button {
+    float: right;
+    padding: 7px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .search-container button:hover {
+    background: #ccc;
+  }
+  
+  @media screen and (max-width: 600px)
+  {
+    .search-container 
+    {
+      float: none;
+    }
+    .search-container input[type=text], .search-container button {
+      float: none;
+      display: block;
+      text-align: left;
+      width: 100%;
+      padding: 14px;
+    }
+    .search-container input[type=text] 
+    {
+      border: 1px solid #ccc;
+    }
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 50px 0px 0px 0px;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  li {
+    float: left;
+    width: 50%;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 150px 10px 150px;
+    text-decoration: none;
+    border-left: 1px solid #bbb;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #111;
+  }
+  
+  .active {
+    background-color: #4CAF50;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    margin: 100px;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown a:hover {
+    background-color: #ddd;
+  }
+  
+  .show {
+    display: block;
+  }
+  
+  #inventory {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #inventory td, #inventory th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #inventory th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #333;
+    color: white;
+  }
+
+  .main{ padding: 10px; display: flex; width: 100%; } 
+  #Main, #Sign, #Log {
+    margin: 5px 0px 5px 0px; border: 1px solid #000;
+}
+#Main{  padding: 10px; display: flex; } 
+#Log {   margin-left: 10px;   padding: 10px;   flex-grow: 1;} 
+#Sign {  padding: 10px;}
+
+  .buttonAdmin {
+    color: black;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: white;
+    display: inline-block;
+    border: 2px solid blue;
+  }
+  
+  .buttonAdmin:hover {
+    background-color: blue;
+    color: white;
+  }
+  
+  
+  .footer {
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #333;
+    color: white;
+  }
