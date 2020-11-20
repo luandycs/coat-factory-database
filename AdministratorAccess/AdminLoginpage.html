@@ -10,14 +10,14 @@
 <body>
 
 <div class="header">
-<a href="Homepage.html">
+<a href="../Homepage.php">
 <h1>The Coat Factory</h1>
 </a>
 </div>
 
 <div class="navbar">
     <ul>
-      <li><a href="Homepage.html" class="Home">Home</a></li>
+      <li><a href="../Homepage.php" class="Home">Home</a></li>
       <li><a href="AdminLoginpage.html" class="Login">Login</a></li>
       <li><a href="InsertPage.html" class="Insert">Insert</a></li>
       <li><a href="UpdatePage.html" class="Update">Update</a></li>
@@ -26,9 +26,17 @@
     </div>
 
 <div class="page">
-        <h2>
-       Log in as Administrator<br>
-        </h2>
+    <div id="Log">
+        <h1>Login as Administrator</h1>
+        <form action="process-admin.php" method="post">
+            <label for="adminUsername">Username:</label>
+            <input type="text" id="adminUsername" name="adminUsername"/><br><br>
+            <label for="adminPassword">Password:</label>
+            <input type="password" id="adminPassword" name="adminPassword"/><br><br>
+            <input type="submit"/>
+        </form>
+    </div>
+</div>
   
 <div class="footer">
 <h2>

@@ -1,5 +1,5 @@
 <?php
-include_once './includes/dbh.inc.php';
+include_once '../includes/dbh.inc.php';
 
 if(isset($_POST['search'])){
     $input = $_POST['search'];
@@ -16,7 +16,7 @@ if(isset($_POST['search'])){
 </head>
 <body>
     <<div class="header">
-        <a href="Homepage.php">
+        <a href="AdminHomepage.php">
             <h1>The Coat Factory</h1></a>
         <h2>CSI 3450 Database Design Project<br>
             Darius Banks<br>
