@@ -16,7 +16,7 @@
         
         <div class="navbar">
         <ul>
-          <li><a href="Homepage.html" class="Home">Home</a></li>
+          <li><a href="AdminHomepage.php" class="Home">Home</a></li>
           <li><a href="AdminLoginpage.html" class="Login">Login</a></li>
           <li><a href="InsertPage.html" class="Insert">Insert</a></li>
           <li><a href="UpdatePage.html" class="Update">Update</a></li>
@@ -27,16 +27,20 @@
         <h1>Insert:</h1>
 <form action="insert.php" method="post">
     <p>
-        <label for="productID">Product ID:</label>
-        <input type="text" name="Product_ID" id="productID">
+        <label for="pID">Product ID:</label>
+        <input type="text" name="pID" id="pID" required="required">
     </p>
     <p>
         <label for="pname">Product Name:</label>
-        <input type="text" name="Product_Name" id="pname">
+        <input type="text" name="pname" id="pname" required="required">
+    </p>
+    <p>
+        <label for="price">Price:</label>
+        <input type="text" name="price" id="price" required="required">
     </p>
     <p>
         <label for="designer">Designer:</label>
-        <input type="text" name="Designer_Name" id="designer">
+        <input type="text" name="designer" id="designer" required="required">
     </p>
     <input type="submit" value="Submit">
 </form>

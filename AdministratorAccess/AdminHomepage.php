@@ -27,10 +27,10 @@ if(isset($_POST['search'])){
         <div class="navbar">
         <ul>
           <li><a href="AdminHomepage.php" class="Home">Home</a></li>
-          <li><a href="AdminLoginpage.php" class="Login">Login</a></li>
-          <li><a href="InsertPage.php" class="Insert">Insert</a></li>
-          <li><a href="UpdatePage.php" class="Update">Update</a></li>
-          <li><a href="DeletePage.php" class="Delete">Delete</a></li>
+          <li><a href="AdminLoginpage.html" class="Login">Login</a></li>
+          <li><a href="InsertPage.html" class="Insert">Insert</a></li>
+          <li><a href="UpdatePage.html" class="Update">Update</a></li>
+          <li><a href="DeletePage.html" class="Delete">Delete</a></li>
         </ul>
         </div>
 
