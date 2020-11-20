@@ -2,6 +2,7 @@
     box-sizing: border-box;
     }
   
+  
   .header {
   text-align: center;
   }
@@ -66,14 +67,14 @@
   
   li {
     float: left;
-    width: 50%;
+    width: 20%;
   }
   
   li a {
     display: block;
     color: white;
     text-align: center;
-    padding: 10px 150px 10px 150px;
+    padding: 10px;
     text-decoration: none;
     border-left: 1px solid #bbb;
   }
@@ -135,12 +136,13 @@
   }
 
   .main{ padding: 10px; display: flex; width: 75%; margin: 5px 0px 5px 0px; border: 1px solid #000;}
-#Log { padding: 10px; margin-left: 10px; border: 1px solid #000; flex-grow: 1;} 
-#Sign { padding: 10px; border: 1px solid #000; flex-grow: 1;}
+  #Log { padding: 10px; margin-left: 10px; border: 1px solid #000; flex-grow: 1;} 
+  #Sign { padding: 10px; border: 1px solid #000; flex-grow: 1;}
+  
 
   .buttonAdmin {
     color: black;
-    padding:50px 50px;
+    padding: 16px 32px;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
@@ -159,14 +161,14 @@
   
   
   .footer {
+    bottom: 0;
     width: 100%;
     background-color: #333;
     color: white;
     position: absolute;
-    bottom: 0;
   }
+
   .page {
     display: flex;
     flex-wrap: wrap;
   }
-

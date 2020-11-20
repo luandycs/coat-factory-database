@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Update Record Form</title>
+<link href="AdminPageLayout.css" rel="stylesheet" />  
+</head>
+<body>
+
+    <div class="header">
+        <a href="Homepage.html">
+        <h1>The Coat Factory</h1>
+        </a>
+        </div>
+        
+        <div class="navbar">
+        <ul>
+          <li><a href="Homepage.html" class="Home">Home</a></li>
+          <li><a href="AdminLoginpage.html" class="Login">Login</a></li>
+          <li><a href="InsertPage.html" class="Insert">Insert</a></li>
+          <li><a href="UpdatePage.html" class="Update">Update</a></li>
+          <li><a href="DeletePage.html" class="Delete">Delete</a></li>
+        </ul>
+        </div>
+
+        <h1>Update:</h1>
+<form action="update.php" method="post">
+    <p>
+        <label for="productID">Product ID:</label>
+        <input type="text" name="Product_ID" id="productID">
+    </p>
+    <p>
+        <label for="pname">Product Name:</label>
+        <input type="text" name="Product_Name" id="pname">
+    </p>
+    <p>
+        <label for="designer">Designer:</label>
+        <input type="text" name="Designer_Name" id="designer">
+    </p>
+    <input type="submit" value="Submit">
+</form>
+
+<div class="footer">
+    <h2>
+    CSI 3450 Database Design Project<br>
+    The Coat Factory<br>
+    Darius Banks<br>
+    Andy Lu
+    </h2>
+    </div>
+
+</body>
+</html>

@@ -14,6 +14,7 @@
 </a>
 </div>
 
+<div class="page">
 <div class="navbar">
 <ul>
   <li><a href="Homepage.html" class="Home">Home</a></li>
@@ -37,71 +38,49 @@
   </div>
 </div>
 
-<script>
-function myFunction() {
-document.getElementById("myDropdown").classList.toggle("show");
-}
-</script>
   
-  <table id="inventory">
-    <tr>
-      <th>Product Name</th>
-      <th>Product Price</th>
-      <th>Designer</th>
-       <th>Company</th>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-  </table>
+    <table id="inventory">
+      <tr>
+        <th>Product Name</th>
+        <th>Product Price</th>
+        <th>Designer</th>
+         <th>Company</th>
+      </tr>
+      <?php
+      $conn = mysqli_connect("localhost", "root", "", "COAT-FACTORY-DATABASE");
+      // Check connection
+      if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+      }
+      $sql = "SELECT Product_ID, Product_Name, Product_Price, Designer, Company FROM products";
+      $result = $conn->query($sql);
+      if ($result->num_rows > 0) {
+      // output data of each row
+      while($row = $result->fetch_assoc()) {
+      echo "<tr><td>" . $row["Product_Name"] . "</td><td>" . $row["Product_Price"] . "</td><td>"
+      . $row["Product_Designer"] . "</td></td>" . $row["Company"] . "</td></tr>";
+      }
+      echo "</table>";
+      } else { echo "0 results"; }
+      $conn->close();
+      ?> 
+    </table>
 
-  <div class="footer">
-    <h2>
-    CSI 3450 Database Design Project<br>
-    The Coat Factory<br>
-    Darius Banks<br>
-    Andy Lu
-    </h2>
-    </div>
+<div class="footer">
+  <h2>
+  CSI 3450 Database Design Project<br>
+  The Coat Factory<br>
+  Darius Banks<br>
+  Andy Lu
+  </h2>
+  </div>
+</div>
+
+  <script>
+    function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+    }
+    </script>
 
 </body>
 </html>
