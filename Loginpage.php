@@ -106,6 +106,7 @@ include_once './includes/dbh.inc.php';
 </a>
 </div>
 
+<div class="page">
 <div class="navbar">
 <ul>
   <li><a href="Homepage.php" class="Home">Home</a></li>
@@ -115,7 +116,6 @@ include_once './includes/dbh.inc.php';
 
 <div class="main">  
     <!-- This Form is for signing up for the website -->
-    <div id="Main">
     <div id="Sign">
     <h1>Signup</h1>
     <form action="process-login.php" method="post">
@@ -149,17 +149,21 @@ include_once './includes/dbh.inc.php';
     </form>
     </div>
     </div>
-    </div>
-    
- <button class="buttonAdmin">Adminstator Access</button>
-  
-<div class="footer">
+
+    <button class="buttonAdmin" id="AdminAccessButton">Administrator Access</button>
+    <script type="text/javascript">
+        document.getElementById("AdminAccessButton").onclick = function () {
+            location.href = "../a/AdministratorAccess/AdminLoginpage.html";
+        };
+    </script>
+    <div class="footer">
 <h2>
 CSI 3450 Database Design Project<br>
 The Coat Factory<br>
 Darius Banks<br>
 Andy Lu
 </h2>
+</div>
 </div>
 
 </body>

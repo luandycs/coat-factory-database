@@ -1,20 +1,20 @@
 <?php
-/* Attempt MySQL server connection. Assuming you are running MySQL
-server with default setting (user 'root' with no password) */
-$link = mysqli_connect("localhost", "root", "", "COAT-FACTORY-DATABASE");
- 
-// Check connection
-if($link === false){
-    die("ERROR: Could not connect. " . mysqli_connect_error());
-}
+//attempts connection to mySQL database
+include_once "../includes/dbh.inc.php";
+$product_id = $_POST['productID'];
 
 // Attempt delete query execution
-$sql = "DELETE FROM products WHERE Product_ID='$Product_ID'";
-if(mysqli_query($link, $sql)){
+$sql = "SELECT FROM products WHERE PRODUCT_ID=".$product_id;
+$result = mysqli_query($conn, $sql);
+$temp = mysqli_fetch_assoc($result);
+
+
+$sql = "DELETE FROM products WHERE Product_ID=".$product_id;
+if(mysqli_query($conn, $sql)){
     echo "Records were deleted successfully.";
 } else {
-    echo "ERROR: Could not execute $sql. " . mysqli_error($link);
+    echo "ERROR: Could not execute $sql. " . mysqli_error($conn);
 }
  
 // Close connection
-mysqli_close($link);
+mysqli_close($conn);

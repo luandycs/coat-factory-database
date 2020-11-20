@@ -162,8 +162,7 @@
     width: 100%;
     background-color: #333;
     color: white;
-    position: absolute;
-    bottom: 0;
+    height: 180px;
   }
   .page {
     display: flex;
