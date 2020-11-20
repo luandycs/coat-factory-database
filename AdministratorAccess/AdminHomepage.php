@@ -15,11 +15,13 @@ if(isset($_POST['search'])){
 <link href="AdminPageLayout.css" rel="stylesheet" />  
 </head>
 <body>
-    <div class="header">
-        <a href="Homepage.html">
-        <h1>The Coat Factory</h1>
-        </a>
-        </div>
+    <<div class="header">
+        <a href="Homepage.php">
+            <h1>The Coat Factory</h1></a>
+        <h2>CSI 3450 Database Design Project<br>
+            Darius Banks<br>
+            Andy Lu<br></h2>
+    </div>
 
     <div class="page">
         <div class="navbar">
@@ -90,16 +92,5 @@ document.getElementById("myDropdown").classList.toggle("show");
     }
     ?>
 </table>
-
-  <div class="footer">
-    <h2>
-    CSI 3450 Database Design Project<br>
-    The Coat Factory<br>
-    Darius Banks<br>
-    Andy Lu
-    </h2>
-    </div>
-  </div>
-
 </body>
 </html>
