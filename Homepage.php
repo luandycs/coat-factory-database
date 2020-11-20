@@ -1,5 +1,11 @@
 <?php
 include_once './includes/dbh.inc.php';
+
+if(isset($_POST['search'])){
+    $input = $_POST['search'];
+    echo "SUCCESS! YOU ENTERED: " . $input;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +31,7 @@ include_once './includes/dbh.inc.php';
 </div>
 
   <div class="search-container">
-    <form action="/action_page.php">
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" name = "searchForm" method="post">
       <input type="text" placeholder="Search.." name="search" onkeypress="myFunction()">
       <button type="submit">Submit</button>
     </form>
