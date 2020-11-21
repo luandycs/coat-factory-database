@@ -27,7 +27,7 @@ mysqli_close($conn);
 ?>
 <html>
 <head>
-    <meta http-equiv="refresh" content="10;url=DeletePage.html"/>
+    <meta http-equiv="refresh" content="3;url=DeletePage.html"/>
 </head>
 <body>
 <h1>Redirecting in a few seconds...</h1>

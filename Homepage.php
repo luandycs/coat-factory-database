@@ -72,13 +72,16 @@ document.getElementById("myDropdown").classList.toggle("show");
           if ($resultCheck > 0) {
               while ($row = mysqli_fetch_assoc($result)) {
 
-                  //retrieves designer information of the current product
+                  //retrieves designer id of the current product
                   $sql = "SELECT * FROM products_has_designer WHERE PRODUCT_ID='" . $row['PRODUCT_ID'] . "'";
                   $temp = mysqli_query($conn, $sql);
                   $designer_info = mysqli_fetch_assoc($temp);
+
+                  //retrieves other designer information based off designer id above
                   $sql = "SELECT * FROM designer WHERE DESIGNER_ID='" . $designer_info['DESIGNER_ID'] . "'";
                   $temp = mysqli_query($conn, $sql);
                   $designer_info = mysqli_fetch_assoc($temp);
+                  //produces the table
                   $html = "<tr><th>" . $row['PRODUCT_NAME'] . "</th>";
                   $html .= "<th>$" . $row['PRODUCT_PRICE'] . "</th>";
                   $html .= "<th>".$designer_info['DESIGNER_FNAME']." ".$designer_info['DESIGNER_LNAME']."</th></tr>";
