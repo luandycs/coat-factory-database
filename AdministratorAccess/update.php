@@ -24,7 +24,7 @@ $sql = "SELECT * FROM products_has_designer WHERE PRODUCT_ID='".$pid."'";
 $result = mysqli_query($conn, $sql);
 $resultCheck = mysqli_fetch_assoc($result);
 
-//checks if product id exits 
+//checks if product id exits
 if($resultCheck['PRODUCT_ID'] != NULL){
     //updates the new product into products table
     $sql = "UPDATE products SET PRODUCT_NAME='".$pname."', PRODUCT_PRICE=".$price." WHERE PRODUCT_ID=".$pid;
@@ -60,4 +60,14 @@ else{
     echo "<br> ERROR: UPDATE IS UNAVAILABLE<br>";
 
 }
+mysqli_close($conn);
 ?>
+<html>
+<head>
+    <meta http-equiv="refresh" content="3;url=InsertPage.html"/>
+</head>
+<body>
+<h1>Redirecting in a few seconds...</h1>
+</body>
+</html>
+
