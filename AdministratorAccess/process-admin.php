@@ -16,6 +16,7 @@ if($temp != NULL) {
             echo "<br>SUCCESSFULLY LOGGED INTO: <br>" . $username;
             session_start(['$username']);
             header("Location: AdminHomepage.php");
+            $GLOBALS['username'] = $username;
         } else {
             echo "<br> USER IS NOT AN ADMIN<br>";
             header("Refresh:3;Location: ../Loginpage.php");
