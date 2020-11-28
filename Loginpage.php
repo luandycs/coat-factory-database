@@ -118,14 +118,11 @@ include_once './includes/dbh.inc.php';
     <!-- This Form is for signing up for the website -->
     <div id="Sign">
     <h1>Signup</h1>
-    <form action="process-login.php" method="post">
+    <form action="process-signup.php" method="post">
     <input type="hidden" name="Signup" value="1"/>
-     <label for="firstname">First Name:</label>
-     <input type="text" id="firstname" name="firstname"/><br><br>
-     <label for="lastname">Last Name:</label>
-     <input type="text" id="lastname" name="lastname"/><br><br>
+
      <label for="username">Username:</label>
-     <input type="text" id="Username" name="Username"/><br><br>
+     <input type="text" id="username2" name="username2"/><br><br>
      <label for="email">Email Address:</label>
      <input type="email" id="address" name="address"/><br><br>
      <label for="password">Password:</label>

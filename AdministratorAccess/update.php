@@ -28,7 +28,6 @@ $resultCheck = mysqli_fetch_assoc($result);
 if($resultCheck['PRODUCT_ID'] != NULL){
     //updates the new product into products table
     $sql = "UPDATE products SET PRODUCT_NAME='".$pname."', PRODUCT_PRICE=".$price." WHERE PRODUCT_ID=".$pid;
-    echo $sql;
     $result = mysqli_query($conn, $sql);
     $temp = 0;
     //finds space in between the first and last name

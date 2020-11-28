@@ -1,9 +1,10 @@
 <?php
 //attempts connection to mySQL database
 include_once "../includes/dbh.inc.php";
+
 //sets variables from post form
 $product_id = $_POST['pID'];
-
+//finds product id in the table
 $sql = "DELETE FROM products WHERE Product_ID=" . $product_id;
 
 //attempt to delete from products

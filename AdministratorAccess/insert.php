@@ -2,6 +2,7 @@
 /* Attempt MySQL server connection. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
 include_once "../includes/dbh.inc.php";
+
 //Sets variables
 if(isset($_POST['pID']))
 {

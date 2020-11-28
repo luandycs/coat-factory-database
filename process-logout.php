@@ -1,7 +1,9 @@
 <?php
+//retrieves username from global variables and unsets it
+$username = $GLOBALS['username'];
+unset($_SESSION[$username]);
 
-   unset($GLOBALS['username']);
-    echo "LOGOUT SUCCESSFUL";
+echo "LOGOUT SUCCESSFUL";
 ?>
 <html>
 <head>

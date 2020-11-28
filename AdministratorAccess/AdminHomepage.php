@@ -1,6 +1,7 @@
 <?php
+// starts connection
 include_once '../includes/dbh.inc.php';
-include '../includes/login.inc.php';
+
 //stores user search result into local variable input
 if(isset($_POST['search'])){
     $input = $_POST['search'];
@@ -78,14 +79,18 @@ else{$_POST['dropdown']=0;}
             </tr>
             <?php
             //finds all products that contain the substring of the user's input and executes
+            //code 1 means products according to dropdown
             if($_POST['dropdown']==1) {
+
+                //checks for empty search
                 if (isset($_POST['search'])) {
                     $sql = "SELECT * FROM products WHERE PRODUCT_NAME LIKE '%" . $input . "%'";
                     $result = mysqli_query($conn, $sql);
 
-                    //prints data if there are results
                     $resultCheck = mysqli_num_rows($result);
                     echo "<br><br>YOU ENTERED: " . $input . "<br>";
+
+                    //checks if there are results from search
                     if ($resultCheck > 0) {
                         while ($row = mysqli_fetch_assoc($result)) {
 
@@ -98,7 +103,8 @@ else{$_POST['dropdown']=0;}
                             $sql = "SELECT * FROM designer WHERE DESIGNER_ID='" . $designer_info['DESIGNER_ID'] . "'";
                             $temp = mysqli_query($conn, $sql);
                             $designer_info = mysqli_fetch_assoc($temp);
-                            //produces the table
+
+                            //produces the table using all the information gathered
                             $html = "<tr><th>" . $row['PRODUCT_NAME'] . "</th>";
                             $html .= "<th>$" . $row['PRODUCT_PRICE'] . "</th>";
                             $html .= "<th>" . $designer_info['DESIGNER_FNAME'] . " " . $designer_info['DESIGNER_LNAME'] . "</th></tr>";
@@ -109,16 +115,25 @@ else{$_POST['dropdown']=0;}
                 }
                 else{echo "SEARCH FIELD IS EMPTY!";}
             }
+            //finds all the products that are below a certain price point
+            //code 2 means searching for prices
             elseif($_POST['dropdown']==2){
+
+                //checks for empty search and if search is a numeric value
                 if(isset($_POST['search']) AND is_numeric($_POST['search'])) {
+
+                    //finds products below inputted price
                     $sql = "SELECT * FROM products WHERE PRODUCT_PRICE < ". $input;
                     $result = mysqli_query($conn, $sql);
 
                     $resultCheck = mysqli_num_rows($result);
                     echo "<br>You Entered: " . $input . "<br>";
                     echo "Here are the coats less than $".$input."<br>";
+
+                    //checks if there are results produced from search
                     if ($resultCheck > 0) {
                         while ($row = mysqli_fetch_assoc($result)) {
+
                             //retrieves designer id of the current product
                             $sql = "SELECT * FROM products_has_designer WHERE PRODUCT_ID='" . $row['PRODUCT_ID'] . "'";
                             $temp = mysqli_query($conn, $sql);
@@ -128,6 +143,7 @@ else{$_POST['dropdown']=0;}
                             $sql = "SELECT * FROM designer WHERE DESIGNER_ID='" . $designer_info['DESIGNER_ID'] . "'";
                             $temp = mysqli_query($conn, $sql);
                             $designer_info = mysqli_fetch_assoc($temp);
+
                             //produces the table
                             $html = "<tr><th>" . $row['PRODUCT_NAME'] . "</th>";
                             $html .= "<th>$" . $row['PRODUCT_PRICE'] . "</th>";
@@ -140,22 +156,28 @@ else{$_POST['dropdown']=0;}
                 }
                 else{echo "SEARCH FIELD IS EMPTY OR CONTAINS ERROR!";}
             }
+            //finds products that are produced by the searched designer
+            //code 3 means searching for designer names
             elseif($_POST['dropdown']==3){
+
+                //checks for empty search
                 if(isset($_POST['search'])) {
+
+                    //finds any designer names containing the search value
                     $sql = "SELECT * FROM designer WHERE DESIGNER_FNAME LIKE '%" . $input . "%' OR DESIGNER_LNAME LIKE '%" . $input . "%'";
                     $result = mysqli_query($conn, $sql);
+
                     $resultCheck = mysqli_num_rows($result);
                     echo "<br>You Entered: " . $input . "<br>";
                     echo "Here are the designers with products whose name contains your search ".$input."<br>";
 
+                    //checks if there are search results
                     if ($resultCheck > 0) {
-
                         //outer loop runs through all designers that contains search result
                         while ($row = mysqli_fetch_assoc($result)) {
                             //retrieves designer id of the current product
                             $sql = "SELECT * FROM products_has_designer WHERE DESIGNER_ID='" . $row['DESIGNER_ID'] . "'";
                             $temp = mysqli_query($conn, $sql);
-                            //$designer_products = mysqli_fetch_assoc($temp);
 
                             //finds all the products of the current designer from row
                             while($designer_products = mysqli_fetch_assoc($temp)) {
