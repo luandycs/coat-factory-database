@@ -1,6 +1,8 @@
 <?php
 include_once './includes/dbh.inc.php';
 
+include_once './includes/login.inc.php';
+
 if(isset($_POST['search'])){
     $input = $_POST['search'];
 }
@@ -22,6 +24,7 @@ if(isset($_POST['search'])){
     <h2>CSI 3450 Database Design Project<br>
         Darius Banks<br>
         Andy Lu<br></h2>
+        <h2><a href = "process-logout.php">Sign Out</a></h2>
 </div>
 
 
@@ -32,21 +35,30 @@ if(isset($_POST['search'])){
 </ul>
 </div>
 
-  <div class="search-container">
-    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" name = "searchForm" method="post">
-      <input type="text" placeholder="Search.." name="search" onkeypress="myFunction()">
-      <button type="submit">Submit</button>
+<div class="search-container">
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" name = "filterForm" method="post">
+    <input type="text" placeholder="Search.." id="myInput" onkeyup="myFunction()">
+    <input type="submit" value="Submit">
+   <div class="dropdown">
+  <div id="myDropdown" class="dropdown-content">
+  <a href="#name">
+  <input type="radio" name="product" value="Product_Name">
+  <label for="coat">Coat</label>
+  </a>
+  
+  <a href="#price">
+  <input type="radio" name="product" value="Product_Price">
+  <label for="price">Price</label>
+  </a>
+  
+  <a href="#designer">
+  <input type="radio" name="product" value="Designer_FName">
+  <label for="designer">Designer</label>
+  </a>
+  </div>
+  </div>
     </form>
   </div>
-
-  <div class="dropdown">
-  <div id="myDropdown" class="dropdown-content">
-    <a href="#pname">Product</a>
-    <a href="#pprice">Price</a>
-    <a href="#designer">Designer</a>
-    <a href="#company">Company</a>
-  </div>
-</div>
 
 <script>
 function myFunction() {
@@ -92,10 +104,5 @@ document.getElementById("myDropdown").classList.toggle("show");
       }
       ?>
   </table>
-<script>
-    function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-    }
-</script>
 </body>
 </html>
