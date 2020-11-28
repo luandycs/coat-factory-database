@@ -39,7 +39,7 @@ else{$_POST['dropdown']=0;}
 
 <div class="search-container">
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" name = "filterForm" method="post">
-        <input type="text" placeholder="Search.." name="search" onkeyup="myFunction()">
+        <input type="text" placeholder="Search.." name="search" onclick="myFunction()">
         <button type="submit">Submit</button>
         <div class="dropdown">
             <div id="myDropdown" class="dropdown-content">
