@@ -14,7 +14,7 @@ if(isset($_POST['submit'])){
 
     if($Product_Name != "" || $Product_Price != "" || $Designer_FName != "")
     {
-$query = "SELECT * FROM products WHERE Product_Name = '$Product_Name' OR Product_Price = '$Product_Price' OR Designer_FName = '$Designer_FName'";
+    $query = "SELECT * FROM products WHERE Product_Name = '$Product_Name' OR Product_Price = '$Product_Price' OR Designer_FName = '$Designer_FName'";
     $data = mysqli_query($conn, $query) or die('error');
     if(mysqli_num_rows($data) > 0){
         while ($row = mysqli_fetch_assoc($data)){
