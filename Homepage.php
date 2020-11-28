@@ -1,7 +1,6 @@
 <?php
 include_once './includes/dbh.inc.php';
-
-include_once './includes/login.inc.php';
+include './includes/login.inc.php';
 
 if(isset($_POST['search'])){
     $input = $_POST['search'];
